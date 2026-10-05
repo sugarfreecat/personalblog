@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SugarFreeCat</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="{% static 'sugarfreecat/images/favicon.png' %}">
+    
+    <link rel="stylesheet" href="{% static 'sugarfreecat/css/layout.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="full-page">
+      
+      <div style="display: flex; padding-bottom: 10px;">
+        <img src="{% static 'sugarfreecat/images/letter-start.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-s.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-u.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-g.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-a.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-r.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-f.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-r.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-e.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-e.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-c.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-a.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-t.webp' %}" style="height: 40px; width: auto; align-self: center;">
+        <img src="{% static 'sugarfreecat/images/letter-end.webp' %}" style="height: 40px; width: auto; align-self: center;">
+      </div>
+      
+      <div class="container">
+        <div class="tabs">
+            {% for tab in tabs %}
+                <a class="button-link" href="{% url tab.link %}">
+                    <div class="button">
+                        <p style="padding-right: 12px;">{{ tab.text }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="column no-scrollbar">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    <div id="lastUpdated"></div>☆*:.｡.o(≧▽≦)o.｡.:*☆`
+    
+    <script src="js/cursor_particles.js"></script>
+    <script src="js/click_explosion.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

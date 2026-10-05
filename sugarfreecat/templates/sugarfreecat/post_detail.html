@@ -1,0 +1,10 @@
+{% extends "sugarfreecat/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <div style="display:flex; justify-content: space-between;">
+        <h3>{{ post.title }}</h3>
+        <p><em>{{ post.pub_date }}</em></p>
+    </div>
+    {{ post.text|safe }}
+{% endblock %}

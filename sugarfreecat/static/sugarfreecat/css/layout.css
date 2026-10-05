@@ -1,0 +1,81 @@
+body {
+font-family: 'Pixelify Sans', sans-serif;
+background-image: url('../images/background.png');
+background-color: #ffeded;
+color: #2b0300;
+}
+body, a, a:hover { 
+cursor: url('../images/cursor3.webp'), auto 
+}
+.full-page {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 93vh;
+flex-direction: column;
+}
+.container {
+border-width: 9px;
+border-style: solid;
+border-image: url("../images/border4.png") 9 fill round;
+display: flex;
+max-height: 500px;
+width: 900px;
+background-color: #ffeded;
+padding: 30px;
+}
+.no-scrollbar {
+    /* For Firefox */
+    scrollbar-width: none;
+    
+    /* For Internet Explorer and Legacy Edge */
+    -ms-overflow-style: none;
+}
+
+/* For Chrome, Safari, and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.column {
+display: flex;
+flex-direction: column;
+overflow: scroll;
+padding: 0 40px;
+}
+.tabs {
+display: flex;
+flex-direction: column;
+width: 150px;
+align-items: center;
+gap: 10px;
+}
+.button-link {
+text-decoration: none;
+color: black;
+}
+.button {
+border-width: 9px;
+border-style: solid;
+border-image: url("../images/button2.gif") 9 fill round;
+width: 90px;
+display: flex;
+justify-content: flex-end;
+}
+.button p {
+margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+margin-top: 0;
+}
+p {
+margin: 0;
+margin-bottom: 5px;
+}
+a {
+color: #eb34a1;
+}
+::selection {
+background-color: #eb34a1; /* Changes the background highlight color */
+color: white;            /* Changes the text font color */
+}
