@@ -3,7 +3,7 @@
 
 {% block content %}
     {% for group in posts_by_month %}
-        <h3>{{ group.month|date:"F, Y" }}</h3>
+        <h3 style="margin-bottom: 0;">{{ group.month|date:"F, Y" }}</h3>
 
         <ul class="custom-icon">
             {% for post in group.posts %}
