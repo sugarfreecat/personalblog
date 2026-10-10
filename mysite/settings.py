@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,13 +21,54 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yr0c*tv98*10yy!!-tjr5$!^$)f3!wlq$xk9led^j5uo6-*7m0'
+# Checks an environment variable. If not set, safely defaults to False for production.
+IS_PRODUCTION = os.environ.get('DJANGO_PRODUCTION', 'False') == 'True'
+DEBUG = not IS_PRODUCTION 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# -------------------------------------------------------------
+# Secret Key (Fixes security.W009)
+# -------------------------------------------------------------
+if IS_PRODUCTION:
+    # Production strictly requires a hidden environment variable
+    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+    if not SECRET_KEY:
+        raise ValueError("DJANGO_SECRET_KEY environment variable is missing in production!")
+else:
+    # Safe fallback default for local development only
+    SECRET_KEY = 'django-insecure-yr0c*tv98*10yy!!-tjr5$!^$)f3!wlq$xk9led^j5uo6-*7m0'
 
+# -------------------------------------------------------------
+# Allowed Hosts (Fixes security.W020)
+# -------------------------------------------------------------
 ALLOWED_HOSTS = []
+
+if IS_PRODUCTION:
+    # Parse comma-separated domains from production variables
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
+# -------------------------------------------------------------
+# Production Security Headers (Fixes W004, W008, W012, W016)
+# -------------------------------------------------------------
+if IS_PRODUCTION:
+    # Force HTTPS redirects
+    SECURE_SSL_REDIRECT = True
+    
+    # Secure Cookies (Prevents network sniffing over HTTP)
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    
+    # HTTP Strict Transport Security (HSTS)
+    # Starts safely at 30 days. You can bump to 31536000 (1 year) once deployment is verified stable.
+    SECURE_HSTS_SECONDS = 2592000  
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    
+    # Optional but highly recommended additional headers
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+    
+    # Vercel / Cloudflare Reverse Proxy Header Setup
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -80,6 +123,13 @@ DATABASES = {
     }
 }
 
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600
+        )
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
@@ -120,6 +170,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "sugarfreecat" / "static", 
 ]
+
+if IS_PRODUCTION:
+    STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Email
