@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
-from django.db.models.functions import TruncMonth
+from itertools import groupby
 
-from .models import Tab, Post
+from .models import Tab, Post, Link
 
 def layout(request):
     tabs = Tab.objects.all()
@@ -44,3 +44,12 @@ def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     tabs = Tab.objects.all().filter(is_active=True)
     return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post})
+
+def links(request):
+    tabs = Tab.objects.all().filter(is_active=True)
+    links = Link.objects.filter(is_active=True).order_by('category')
+    grouped_links = {
+        category: list(items)
+        for category, items in groupby(links, key=lambda link: link.category)
+    }
+    return render(request, "sugarfreecat/links.html", {"tabs": tabs, "links": grouped_links})

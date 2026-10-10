@@ -20,3 +20,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Link(models.Model):
+    text = models.CharField(max_length=50)
+    link = models.CharField(max_length=200)
+    is_active = models.BooleanField(default=True)
+    category = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return self.text
