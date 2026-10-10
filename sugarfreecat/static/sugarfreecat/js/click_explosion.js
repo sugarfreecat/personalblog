@@ -1,6 +1,6 @@
 var b = document.body;
 var imgurl = clickExplosionImg;
-var size = [20, 100];
+var size = [40, 40];
 function rand(min, max)
 {
 return Math.floor(Math.random() * (max - min + 1) + min)
