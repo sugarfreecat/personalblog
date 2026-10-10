@@ -18,5 +18,5 @@ def index(request):
 
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
-    tabs = Tab.objects.all()
+    tabs = Tab.objects.all().filter(is_active=True)
     return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post})
