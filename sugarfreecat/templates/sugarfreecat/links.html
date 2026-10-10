@@ -1,0 +1,17 @@
+{% extends "sugarfreecat/layout.html" %}
+{% load static %}
+
+{% block content %}
+    {% for categories, links in links.items %}
+        <h3>{{ categories }}</h3>
+        {% for link in links %}
+            <ul class="custom-icon" style="margin: 0;">
+                <li>
+                    <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">
+                        {{ link.text }}
+                    </a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
