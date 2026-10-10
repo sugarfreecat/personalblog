@@ -13,16 +13,17 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 import os
 import dj_database_url
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # Checks an environment variable. If not set, safely defaults to False for production.
-IS_PRODUCTION = os.environ.get('DJANGO_PRODUCTION', 'False') == 'True'
+IS_PRODUCTION = os.getenv('DJANGO_PRODUCTION', 'False') == 'True'
 DEBUG = not IS_PRODUCTION 
 
 # -------------------------------------------------------------
@@ -30,7 +31,7 @@ DEBUG = not IS_PRODUCTION
 # -------------------------------------------------------------
 if IS_PRODUCTION:
     # Production strictly requires a hidden environment variable
-    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     if not SECRET_KEY:
         raise ValueError("DJANGO_SECRET_KEY environment variable is missing in production!")
 else:
@@ -44,7 +45,7 @@ ALLOWED_HOSTS = []
 
 if IS_PRODUCTION:
     # Parse comma-separated domains from production variables
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # -------------------------------------------------------------
 # Production Security Headers (Fixes W004, W008, W012, W016)
@@ -123,10 +124,10 @@ DATABASES = {
     }
 }
 
-if os.environ.get("DATABASE_URL"):
+if os.getenv("DATABASE_URL") or os.getenv("USE_NEON"):
     DATABASES = {
         'default': dj_database_url.config(
-            default=os.environ.get('DATABASE_URL'),
+            default=os.getenv('DATABASE_URL'),
             conn_max_age=600
         )
     }

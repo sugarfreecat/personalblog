@@ -4,7 +4,7 @@ from django.db import models
 class Tab(models.Model):
     text = models.CharField(max_length=50)
     link = models.CharField(max_length=200)
-    active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.text

@@ -12,7 +12,7 @@ def layout(request):
     
 
 def index(request):
-    tabs = Tab.objects.all()
+    tabs = Tab.objects.all().filter(is_active=True)
     posts = Post.objects.all().order_by('pub_date')[:5]  # Get the 5 most recent posts
     return render(request, "sugarfreecat/index.html", {"tabs": tabs, "posts": posts})
 
