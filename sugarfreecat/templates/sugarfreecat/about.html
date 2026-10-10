@@ -1,0 +1,26 @@
+{% extends "sugarfreecat/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>About Me!</h2>
+    <ul>
+        <li>Name: Gigi</li>
+        <li>Age: 21</li>
+        <li>Birthday: 13 February</li>
+        <li>Hobbies: books, films, games, music, sewing</li>
+    </ul>
+    
+    <div style="display: flex; padding-top: 10px; padding-bottom: 20px;">
+    <img src="{% static 'sugarfreecat/images/separator2.gif' %}" alt="roses in a row" style="height: 35px; width: auto; align-self: center;">
+    <img src="{% static 'sugarfreecat/images/separator2.gif' %}" alt="roses in a row" style="height: 35px; width: auto; align-self: center;">
+    </div>
+    
+    <h2 style="margin-bottom: 0;">Things I like!</h2>
+    <ul>
+        <li>books</li>
+        <li>games</li>
+        <li>movies and series</li>
+        <li>sewing</li>
+        <li>music</li>
+    </ul>
+{% endblock %}
