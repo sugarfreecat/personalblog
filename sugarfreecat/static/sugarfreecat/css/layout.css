@@ -8,21 +8,21 @@ body, a, a:hover {
 cursor: url('../images/cursor3.webp'), auto 
 }
 .full-page {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 93vh;
-flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    flex-direction: column;
 }
 .container {
-border-width: 9px;
-border-style: solid;
-border-image: url("../images/border4.png") 9 fill round;
-display: flex;
-max-height: 500px;
-width: 900px;
-background-color: #ffeded;
-padding: 30px;
+    border-width: 9px;
+    border-style: solid;
+    border-image: url("../images/border4.png") 9 fill round;
+    display: flex;
+    max-height: 500px;
+    width: 900px;
+    background-color: #ffeded;
+    padding: 30px;
 }
 .no-scrollbar {
     /* For Firefox */
@@ -37,10 +37,11 @@ padding: 30px;
     display: none;
 }
 .column {
-display: flex;
-flex-direction: column;
-overflow: scroll;
-padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    padding: 0 40px;
+    width: 100%;
 }
 .tabs {
 display: flex;
@@ -75,6 +76,21 @@ margin-bottom: 5px;
 a {
 color: #eb34a1;
 }
+
+ul.custom-icon {
+    list-style-type: none; /* 1. Remove the default bullet */
+    padding-left: 0;       /* 2. Reset padding if needed */
+  }
+
+  ul.custom-icon li {
+    background-image: url('../images/deco2.gif'); /* 3. Add your image */
+    background-repeat: no-repeat;           /* 4. Don't let it tile */
+    background-size: 16px 16px;             /* 5. Force the exact image size */
+    background-position: left center;       /* 6. Align it horizontally and vertically */
+    padding-left: 28px;                     /* 7. Create space so text doesn't overlap image */
+    margin-bottom: 8px;                     /* Optional: space between items */
+  }
+
 ::selection {
 background-color: #eb34a1; /* Changes the background highlight color */
 color: white;            /* Changes the text font color */

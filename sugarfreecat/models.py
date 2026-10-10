@@ -11,7 +11,6 @@ class Tab(models.Model):
 
 
 class Post(models.Model):
-    tab = models.ForeignKey(Tab, on_delete=models.CASCADE)
     text = models.TextField()
     title = models.CharField(max_length=200)
     pub_date = models.DateField(default=None, null=True, blank=True)
