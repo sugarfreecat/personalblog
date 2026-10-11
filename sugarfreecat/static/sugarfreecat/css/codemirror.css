@@ -1,0 +1,11 @@
+.CodeMirror, .editor-preview-window {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.CodeMirror {
+    height: 350px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.editor-preview-window {
+    height: 300px;
+}
