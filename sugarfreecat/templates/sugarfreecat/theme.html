@@ -1,0 +1,14 @@
+{% extends "sugarfreecat/layout.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'sugarfreecat/css/theme.css' %}">
+{% endblock %}
+{% block content %}
+    <h3>Pick your cursor!</h3>
+    <div id="cursor-gallery" class="cursor-gallery">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'sugarfreecat/js/theme.js' %}"></script>
+{% endblock %}

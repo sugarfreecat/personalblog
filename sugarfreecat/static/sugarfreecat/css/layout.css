@@ -1,12 +1,18 @@
+:root {
+  --custom-cursor: url('../images/cursor7.webp');
+}
+
 body {
-font-family: 'Pixelify Sans', sans-serif;
-background-image: url('../images/background.png');
-background-color: #ffeded;
-color: #2b0300;
+    font-family: 'Pixelify Sans', sans-serif;
+    background-image: url('../images/background.png');
+    background-color: #ffeded;
+    color: #2b0300;
 }
-body, a, a:hover { 
-cursor: url('../images/cursor3.webp'), auto 
+
+body * {
+    cursor: var(--custom-cursor), auto !important;
 }
+
 .full-page {
     display: flex;
     justify-content: center;

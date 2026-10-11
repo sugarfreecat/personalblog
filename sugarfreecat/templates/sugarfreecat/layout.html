@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
+    {% block style %}
+    {% endblock %}
   </head>
   <body>
     <div class="full-page">
@@ -54,8 +55,10 @@
     <script>
       const clickExplosionImg = "{% static 'sugarfreecat/images/deco5.gif' %}";
   </script>
+    {% block scripts %}
+    {% endblock %}
+    <script src="{% static 'sugarfreecat/js/script.js' %}"></script>
     <script src="{% static 'sugarfreecat/js/cursor_particles.js' %}"></script>
     <script src="{% static 'sugarfreecat/js/click_explosion.js' %}"></script>
-    <script src="{% static 'sugarfreecat/js/script.js' %}"></script>
   </body>
 </html>

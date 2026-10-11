@@ -53,3 +53,7 @@ def links(request):
         for category, items in groupby(links, key=lambda link: link.category)
     }
     return render(request, "sugarfreecat/links.html", {"tabs": tabs, "links": grouped_links})
+
+def theme(request):
+    tabs = Tab.objects.all().filter(is_active=True)
+    return render(request, "sugarfreecat/theme.html", {"tabs": tabs})
