@@ -4,14 +4,14 @@
 {% block content %}
     {% for categories, links in links.items %}
         <h3>{{ categories }}</h3>
-        {% for link in links %}
-            <ul class="custom-icon" style="margin: 0;">
+        <ul class="custom-icon">
+            {% for link in links %}
                 <li>
                     <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">
                         {{ link.text }}
                     </a>
                 </li>
-            </ul>
-        {% endfor %}
+            {% endfor %}
+        </ul>
     {% endfor %}
 {% endblock %}
