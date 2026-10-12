@@ -1,6 +1,6 @@
 // criar arquivos json com as listas e/ou objetos
 
-cursorList = [
+const cursorList = [
     'cursor.png',
     'cursor2.webp',
     'cursor3.webp',
@@ -65,7 +65,7 @@ backgroundList.forEach((backgroundSrc, index) => {
     changeProperty('background', backgroundSrc, index, backgroundGallery);
 });
 
-function changeProperty(property, value, index, parentElement) {
+function changeProperty(property, value, index, parentElement, buttonConfigs = null) {
     const img = document.createElement('img');
 
     img.src = `/static/sugarfreecat/images/${value}`;
@@ -75,45 +75,40 @@ function changeProperty(property, value, index, parentElement) {
     img.addEventListener('click', () => {
         document.body.style.setProperty(`--custom-${property}`, `url('${img.src}')`);
         localStorage.setItem(`--custom-${property}`, img.src);
-        if (property === 'button') checkButton(value);
+        if (property === 'button') checkButton(buttonConfigs);
     });
 
     parentElement.appendChild(img);
 }
 
-const buttonList = [
-    'button.png',
-    'button2.gif',
-    'button3.gif',
-    'button4.gif',
-    'button5.png',
-    'button6.png',
-    'button7.gif',
-    'button8.png',
-    'button9.gif',
-    'button10.gif',
-    'button11.png',
-    'button12.gif',
-    'button13.png',
-    'button14.png',
-    'button15.gif',
-    'button16.gif',
-    'button17.png',
-    'button18.gif',
-    'button19.gif',
-]
-
-// mudar buttonList para o formato a seguir
-// const buttons = [
-//     {"src": "button.png", "attributes": {"--tab-text-padding-bottom": "10px"}},
-// ]
+const buttons = [
+    { src: 'button.png', attributes: { '--tab-text-padding-bottom': '10px', '--tab-button-width': '110px' } },
+    { src: 'button2.gif', attributes: { '--tab-text-padding-right': '12px', '--tab-justify-content': 'flex-end' } },
+    { src: 'button3.gif', attributes: { '--tab-text-padding-top': '8px' } },
+    { src: 'button4.gif', attributes: { '--tab-text-padding-top': '5px' } },
+    { src: 'button5.png' },
+    { src: 'button6.png' },
+    { src: 'button7.gif', attributes: { '--tab-justify-content': 'flex-end', '--tab-text-padding-right': '6px' } },
+    { src: 'button8.png', attributes: { '--tab-text-padding-left': '20px' } },
+    { src: 'button9.gif' },
+    { src: 'button10.gif', attributes: { '--tab-button-width': '100px', '--tab-text-padding-bottom': '5px' } },
+    { src: 'button11.png', attributes: { '--tab-button-width': '110px' } },
+    { src: 'button12.gif', attributes: { '--tab-text-padding-left': '20px' } },
+    { src: 'button13.png', attributes: { '--tab-text-padding-left': '20px' } },
+    { src: 'button14.png' },
+    { src: 'button15.gif', attributes: { '--tab-text-padding-right': '15px' } },
+    { src: 'button16.gif', attributes: { '--tab-text-padding-right': '20px', '--tab-text-padding-bottom': '5px' } },
+    { src: 'button17.png' },
+    { src: 'button18.gif', attributes: { '--tab-text-padding-bottom': '5px', '--tab-text-padding-top': '5px' } },
+    { src: 'button19.gif', attributes: { '--tab-button-width': '110px' } },
+];
 
 const buttonGallery = document.getElementById('button-gallery');
-buttonList.forEach((buttonSrc, index) => {
-    changeProperty('button', buttonSrc, index, buttonGallery);
+buttons.forEach((button, index) => {
+    changeProperty('button', button.src, index, buttonGallery, button.attributes);
 });
 
-function checkButton(buttonSrc) {
+function checkButton(buttonConfigs) {
     let configs = {
         "--tab-text-padding-right": "0",
         "--tab-text-padding-top": "0",
@@ -123,44 +118,8 @@ function checkButton(buttonSrc) {
         "--tab-button-width": "90px"
     }
 
-    // checar se attributes tem itens
-    // se tiver, iterar por todos e aplicar as propriedades ao objeto configs
-    // const button = buttons.find(b => b.src === buttonSrc);
-    // if (button && button.attributes) {
-    //     for (const [key, value] of Object.entries(button.attributes)) {
-    //         configs[key] = value;
-    //     }
-    // }
-
-    if (buttonSrc === 'button2.gif') {
-        configs['--tab-text-padding-right'] = '12px';
-        configs['--tab-justify-content'] = 'flex-end';
-    } else if (buttonSrc === 'button3.gif') {
-        configs['--tab-text-padding-top'] = '8px';
-
-    } else if (buttonSrc === 'button.png') {
-        configs['--tab-text-padding-bottom'] = '10px';
-        configs['--tab-button-width'] = '110px';
-    } else if (buttonSrc === 'button4.gif') {
-        configs['--tab-text-padding-top'] = '5px';
-    } else if (buttonSrc === 'button7.gif') {
-        configs['--tab-justify-content'] = 'flex-end';
-        configs['--tab-text-padding-right'] = '6px';
-    } else if (buttonSrc === 'button8.png' || buttonSrc === 'button12.gif' || buttonSrc === 'button13.png') {
-        configs['--tab-text-padding-left'] = '20px';
-    } else if (buttonSrc === 'button10.gif') {
-        configs['--tab-button-width'] = '100px';
-        configs['--tab-text-padding-bottom'] = '5px';
-    } else if (buttonSrc === 'button11.png' || buttonSrc === 'button19.gif') {
-        configs['--tab-button-width'] = '110px';
-    } else if (buttonSrc === 'button15.gif') {
-        configs['--tab-text-padding-right'] = '15px';
-    } else if (buttonSrc === 'button16.gif') {
-        configs['--tab-text-padding-right'] = '20px';
-        configs['--tab-text-padding-bottom'] = '5px';
-    } else if (buttonSrc === 'button18.gif') {
-        configs['--tab-text-padding-bottom'] = '5px';
-        configs['--tab-text-padding-top'] = '5px';
+    if (buttonConfigs) {
+        Object.assign(configs, buttonConfigs);
     }
 
     for (const [key, value] of Object.entries(configs)) {
