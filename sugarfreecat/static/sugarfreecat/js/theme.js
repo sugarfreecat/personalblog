@@ -80,3 +80,23 @@ function getButtonDefaults() {
         "--tab-button-width": "90px"
     };
 }
+
+document.getElementById('reset-btn').addEventListener('click', resetTheme);
+function resetTheme() {
+    const themeProperties = [
+        '--custom-cursor',
+        '--custom-background',
+        '--custom-button',
+        '--tab-text-padding-right',
+        '--tab-text-padding-bottom',
+        '--tab-justify-content',
+        '--tab-text-padding-top',
+        '--tab-text-padding-left',
+        '--tab-button-width'
+    ];
+
+    themeProperties.forEach(property => {
+        document.body.style.removeProperty(property);
+        localStorage.removeItem(property);
+    });
+}

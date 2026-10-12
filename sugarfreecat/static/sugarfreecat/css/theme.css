@@ -2,7 +2,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-.cursor-gallery, .background-gallery {
+.cursor-gallery, .background-gallery, .button-gallery {
     margin-bottom: 20px;
 }
 
@@ -28,14 +28,11 @@ h3 {
     width: auto;
     align-self: center;
 }
-/* .button-gallery {
-    display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 10px;
-    place-items: center;
-} */
 .button-option {
     height: 30px;
     width: auto;
-    /* align-self: center; */
+}
+.reset-btn {
+    color: #eb34a1;
+    text-decoration: overline;
 }
