@@ -10,20 +10,10 @@ const configs = {
     "--tab-button-width": "--tab-button-width"
 }
 
-const imageConfigs = [
-    "--custom-cursor",
-    "--custom-background",
-    "--custom-button"
-];
-
 for (const [key, cssVariable] of Object.entries(configs)) {
 const storedValue = localStorage.getItem(key);
 
     if (storedValue) {
-        const value = imageConfigs.includes(key)
-            ? `url('${storedValue}')`
-            : storedValue;
-            
-        document.body.style.setProperty(cssVariable, value);
+        document.body.style.setProperty(cssVariable, storedValue);
     }
 }
