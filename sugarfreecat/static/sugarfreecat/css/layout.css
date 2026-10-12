@@ -1,10 +1,18 @@
 :root {
-  --custom-cursor: url('../images/cursor7.webp');
+    --custom-cursor: url('../images/cursor7.webp');
+    --custom-background: url('../images/background.png');
+    --custom-button: url('../images/button2.gif');
+    --tab-text-padding-right: 12px;
+    --tab-text-padding-top: 0;
+    --tab-text-padding-bottom: 0;
+    --tab-text-padding-left: 0;
+    --tab-justify-content: 'flex-end';
+    --tab-button-width: '90px';
 }
 
 body {
     font-family: 'Pixelify Sans', sans-serif;
-    background-image: url('../images/background.png');
+    background-image: var(--custom-background);
     background-color: #ffeded;
     color: #2b0300;
 }
@@ -46,30 +54,34 @@ body * {
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    padding: 0 40px;
+    padding: 0 0 0 40px;
     width: 100%;
 }
 .tabs {
-display: flex;
-flex-direction: column;
-width: 150px;
-align-items: center;
-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    align-items: center;
+    gap: 10px;
 }
 .button-link {
-text-decoration: none;
-color: black;
+    text-decoration: none;
+    color: black;
 }
 .button {
-border-width: 9px;
-border-style: solid;
-border-image: url("../images/button2.gif") 9 fill round;
-width: 90px;
-display: flex;
-justify-content: flex-end;
+    border-width: 9px;
+    border-style: solid;
+    border-image: var(--custom-button) 9 fill stretch;
+    width: var(--tab-button-width);
+    display: flex;
+    justify-content: var(--tab-justify-content);
 }
 .button p {
     margin: 0;
+    padding-right: var(--tab-text-padding-right);
+    padding-top: var(--tab-text-padding-top);
+    padding-bottom: var(--tab-text-padding-bottom);
+    padding-left: var(--tab-text-padding-left);
 }
 
 h1, h2, h3, h4, h5, h6 {
