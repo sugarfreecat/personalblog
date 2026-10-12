@@ -6,8 +6,8 @@
     --tab-text-padding-top: 0;
     --tab-text-padding-bottom: 0;
     --tab-text-padding-left: 0;
-    --tab-justify-content: 'flex-end';
-    --tab-button-width: '90px';
+    --tab-justify-content: flex-end;
+    --tab-button-width: 90px;
 }
 
 body {
