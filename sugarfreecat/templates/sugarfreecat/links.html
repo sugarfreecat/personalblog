@@ -1,10 +1,14 @@
 {% extends "sugarfreecat/layout.html" %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'sugarfreecat/css/links.css' %}">
+{% endblock %}
+
 {% block content %}
     {% for categories, links in links.items %}
         <h3>{{ categories }}</h3>
-        <ul class="custom-icon">
+        <ul class="custom-icon link-list">
             {% for link in links %}
                 <li>
                     <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">
