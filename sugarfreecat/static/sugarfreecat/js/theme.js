@@ -140,18 +140,27 @@ function checkButton(buttonSrc) {
 
     } else if (buttonSrc === 'button.png') {
         configs['--tab-text-padding-bottom'] = '10px';
+        configs['--tab-button-width'] = '110px';
     } else if (buttonSrc === 'button4.gif') {
         configs['--tab-text-padding-top'] = '5px';
     } else if (buttonSrc === 'button7.gif') {
         configs['--tab-justify-content'] = 'flex-end';
         configs['--tab-text-padding-right'] = '6px';
-    } else if (buttonSrc === 'button8.png') {
+    } else if (buttonSrc === 'button8.png' || buttonSrc === 'button12.gif' || buttonSrc === 'button13.png') {
         configs['--tab-text-padding-left'] = '20px';
     } else if (buttonSrc === 'button10.gif') {
         configs['--tab-button-width'] = '100px';
         configs['--tab-text-padding-bottom'] = '5px';
-    } else if (buttonSrc === 'button11.png') {
+    } else if (buttonSrc === 'button11.png' || buttonSrc === 'button19.gif') {
         configs['--tab-button-width'] = '110px';
+    } else if (buttonSrc === 'button15.gif') {
+        configs['--tab-text-padding-right'] = '15px';
+    } else if (buttonSrc === 'button16.gif') {
+        configs['--tab-text-padding-right'] = '20px';
+        configs['--tab-text-padding-bottom'] = '5px';
+    } else if (buttonSrc === 'button18.gif') {
+        configs['--tab-text-padding-bottom'] = '5px';
+        configs['--tab-text-padding-top'] = '5px';
     }
 
     for (const [key, value] of Object.entries(configs)) {
