@@ -2,12 +2,25 @@
     --custom-cursor: url('../images/cursor7.webp');
     --custom-background: url('../images/background.png');
     --custom-button: url('../images/button2.gif');
+    --custom-border: url('../images/core/borders/2.png');
+
+    /* custom settings for buttons */
     --tab-text-padding-right: 12px;
     --tab-text-padding-top: 0;
     --tab-text-padding-bottom: 0;
     --tab-text-padding-left: 0;
     --tab-justify-content: flex-end;
     --tab-button-width: 90px;
+
+    /* custom settings for borders */
+    --border-width: 9px;
+    --border-style: solid;
+    --border-image: url('../images/core/borders/2.png');
+    --border-image-slice: 9 fill;
+    --border-image-width: 1;
+    --border-image-outset: 0;
+    --border-image-repeat: round;
+    --title-banner-padding-bottom: 10px;
 }
 
 body {
@@ -28,10 +41,18 @@ body * {
     height: 93vh;
     flex-direction: column;
 }
+#title-banner {
+    display: flex; 
+    padding-bottom: var(--title-banner-padding-bottom);
+}
 .container {
     border-width: 9px;
     border-style: solid;
-    border-image: url("../images/border4.png") 9 fill round;
+    border-image-source: var(--custom-border);
+    border-image-slice: var(--border-image-slice);
+    border-image-width: var(--border-image-width);
+    border-image-outset: var(--border-image-outset);
+    border-image-repeat: var(--border-image-repeat);
     display: flex;
     max-height: 500px;
     width: 900px;

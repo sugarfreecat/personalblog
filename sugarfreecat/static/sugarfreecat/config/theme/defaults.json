@@ -1,0 +1,20 @@
+{
+    "button": {
+        "--tab-text-padding-right": "0",
+        "--tab-text-padding-top": "0",
+        "--tab-justify-content": "center",
+        "--tab-text-padding-bottom": "0",
+        "--tab-text-padding-left": "0",
+        "--tab-button-width": "90px"
+    },
+    "border": {
+        "--border-width": "9px",
+        "--border-style": "solid",
+        "--border-image": "url('../images/core/borders/2.png')",
+        "--border-image-slice": "9 fill",
+        "--border-image-width": "1",
+        "--border-image-outset": "0",
+        "--border-image-repeat": "round",
+        "--title-banner-padding-bottom": "10px"
+    }
+}

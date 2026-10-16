@@ -1,6 +1,8 @@
 import buttons from '/static/sugarfreecat/config/theme/buttons.json' with { type: 'json' };
 import cursorList from '/static/sugarfreecat/config/theme/cursors.json' with { type: 'json' };
 import backgroundList from '/static/sugarfreecat/config/theme/backgrounds.json' with { type: 'json' };
+import borders from '/static/sugarfreecat/config/theme/borders.json' with { type: 'json' };
+import defaults from '/static/sugarfreecat/config/theme/defaults.json' with { type: 'json' };
 
 const galleries = [
     {
@@ -15,16 +17,19 @@ const galleries = [
         property: 'button',
         items: buttons,
         getValue: button => button.src,
-        onSelect: button => applyButtonStyle(button.attributes),
+        onSelect: button => applyPropertyStyle('button', button.attributes),
     },
+    {
+        property: 'border',
+        items: borders,
+        getValue: border => border.src,
+        onSelect: border => applyPropertyStyle('border', border.attributes),
+    }
 ];
 
 galleries.forEach(config => {
     const gallery = document.getElementById(`${config.property}-gallery`);
-    console.log({
-        ...config,
-        gallery,
-    });
+
     renderGallery({
         ...config,
         gallery,
@@ -57,29 +62,43 @@ function renderGallery({
     });
 }
 
-function applyButtonStyle(buttonConfigs) {
-    const BUTTON_DEFAULTS = getButtonDefaults();
+function applyPropertyStyle(property, configs) {
+    const DEFAULTS = { ...defaults[property] };
 
-    if (buttonConfigs) {
-        Object.assign(BUTTON_DEFAULTS, buttonConfigs);
+    if (configs) {
+        Object.assign(DEFAULTS, configs);
     }
 
-    for (const [key, value] of Object.entries(BUTTON_DEFAULTS)) {
+    for (const [key, value] of Object.entries(DEFAULTS)) {
         document.body.style.setProperty(key, value);
         localStorage.setItem(key, value);
     }
+
 }
 
-function getButtonDefaults() {
-    return {
-        "--tab-text-padding-right": "0",
-        "--tab-text-padding-top": "0",
-        "--tab-justify-content": "center",
-        "--tab-text-padding-bottom": "0",
-        "--tab-text-padding-left": "0",
-        "--tab-button-width": "90px"
-    };
-}
+// function applyButtonStyle(buttonConfigs) {
+//     const BUTTON_DEFAULTS = getButtonDefaults();
+
+//     if (buttonConfigs) {
+//         Object.assign(BUTTON_DEFAULTS, buttonConfigs);
+//     }
+
+//     for (const [key, value] of Object.entries(BUTTON_DEFAULTS)) {
+//         document.body.style.setProperty(key, value);
+//         localStorage.setItem(key, value);
+//     }
+// }
+
+// function getButtonDefaults() {
+//     return {
+//         "--tab-text-padding-right": "0",
+//         "--tab-text-padding-top": "0",
+//         "--tab-justify-content": "center",
+//         "--tab-text-padding-bottom": "0",
+//         "--tab-text-padding-left": "0",
+//         "--tab-button-width": "90px"
+//     };
+// }
 
 document.getElementById('reset-btn').addEventListener('click', resetTheme);
 function resetTheme() {

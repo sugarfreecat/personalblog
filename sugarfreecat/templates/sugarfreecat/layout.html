@@ -17,7 +17,7 @@
   <body>
     <div class="full-page">
       
-      <div style="display: flex; padding-bottom: 10px;">
+      <div id="title-banner">
         <img src="{% static 'sugarfreecat/images/letter-start.webp' %}" style="height: 40px; width: auto; align-self: center;">
         <img src="{% static 'sugarfreecat/images/letter-s.webp' %}" style="height: 40px; width: auto; align-self: center;">
         <img src="{% static 'sugarfreecat/images/letter-u.webp' %}" style="height: 40px; width: auto; align-self: center;">
@@ -57,7 +57,7 @@
   </script>
     {% block scripts %}
     {% endblock %}
-    <script src="{% static 'sugarfreecat/js/script.js' %}"></script>
+    <script src="{% static 'sugarfreecat/js/script.js' %}" type="module"></script>
     <script src="{% static 'sugarfreecat/js/cursor_particles.js' %}"></script>
     <script src="{% static 'sugarfreecat/js/click_explosion.js' %}"></script>
   </body>
