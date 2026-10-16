@@ -1,11 +1,23 @@
-.CodeMirror, .editor-preview-window {
+.CodeMirror, .CodeMirror-scroll, .editor-preview-window {
     border: 1px solid #ccc;
-    width: 100%;
+    width: 50vw;
 }
-.CodeMirror {
+.CodeMirror, .CodeMirror-scroll {
     height: 350px;
     font-family: 'Courier New', Courier, monospace;
 }
 .editor-preview-window {
     height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    .CodeMirror, .CodeMirror-scroll, .editor-preview-window {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .CodeMirror, .CodeMirror-scroll, .editor-preview-window {
+        width: 90vw;
+    }
 }
