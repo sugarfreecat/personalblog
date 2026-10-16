@@ -3,6 +3,7 @@ import cursorList from '/static/sugarfreecat/config/theme/cursors.json' with { t
 import backgroundList from '/static/sugarfreecat/config/theme/backgrounds.json' with { type: 'json' };
 import borders from '/static/sugarfreecat/config/theme/borders.json' with { type: 'json' };
 import defaults from '/static/sugarfreecat/config/theme/defaults.json' with { type: 'json' };
+import configs from '/static/sugarfreecat/config/theme/configList.json' with { type: 'json' };
 
 const galleries = [
     {
@@ -76,45 +77,9 @@ function applyPropertyStyle(property, configs) {
 
 }
 
-// function applyButtonStyle(buttonConfigs) {
-//     const BUTTON_DEFAULTS = getButtonDefaults();
-
-//     if (buttonConfigs) {
-//         Object.assign(BUTTON_DEFAULTS, buttonConfigs);
-//     }
-
-//     for (const [key, value] of Object.entries(BUTTON_DEFAULTS)) {
-//         document.body.style.setProperty(key, value);
-//         localStorage.setItem(key, value);
-//     }
-// }
-
-// function getButtonDefaults() {
-//     return {
-//         "--tab-text-padding-right": "0",
-//         "--tab-text-padding-top": "0",
-//         "--tab-justify-content": "center",
-//         "--tab-text-padding-bottom": "0",
-//         "--tab-text-padding-left": "0",
-//         "--tab-button-width": "90px"
-//     };
-// }
-
 document.getElementById('reset-btn').addEventListener('click', resetTheme);
 function resetTheme() {
-    const themeProperties = [
-        '--custom-cursor',
-        '--custom-background',
-        '--custom-button',
-        '--tab-text-padding-right',
-        '--tab-text-padding-bottom',
-        '--tab-justify-content',
-        '--tab-text-padding-top',
-        '--tab-text-padding-left',
-        '--tab-button-width'
-    ];
-
-    themeProperties.forEach(property => {
+    configs.forEach(property => {
         document.body.style.removeProperty(property);
         localStorage.removeItem(property);
     });
