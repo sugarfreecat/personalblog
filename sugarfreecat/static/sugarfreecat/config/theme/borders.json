@@ -44,8 +44,7 @@
         "attributes": {
             "--border-image-width": "7",
             "--border-image-outset": "2",
-            "--border-image-slice": "30 fill",
-            "--title-banner-padding-bottom": "15px"
+            "--border-image-slice": "30 fill"
         }
     },
     {
