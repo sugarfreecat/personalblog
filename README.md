@@ -1,0 +1,1 @@
+Site's available in production; ask me for the link! This is a very personal project where I make posts about my daily life and thoughts, which is why I'm not sharing it publicly. I am, however, sharing the repository - I am very proud and passionate about all this, so how could I not? :)
