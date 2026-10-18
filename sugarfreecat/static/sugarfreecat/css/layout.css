@@ -30,6 +30,12 @@ body {
     color: #2b0300;
 }
 
+body.is-loading {
+    visibility: hidden;
+    background-color: #ffeded; /* Match your animation overlay color */
+    background-image: none;
+}
+
 body * {
     cursor: var(--custom-cursor), auto !important;
 }
