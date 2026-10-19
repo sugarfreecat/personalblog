@@ -27,7 +27,7 @@ body {
     font-family: 'Pixelify Sans', sans-serif;
     background-image: var(--custom-background);
     background-color: #ffeded;
-    color: #2b0300;
+    color: #a90060;
 }
 
 body.is-loading {
