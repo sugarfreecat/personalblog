@@ -45,5 +45,25 @@
     <script src="{% static 'sugarfreecat/js/cursor_particles.js' %}"></script>
     <script src="{% static 'sugarfreecat/js/click_explosion.js' %}"></script>
     <script src="{% static 'sugarfreecat/js/bubbleText.js' %}"></script>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      //from: https://stackoverflow.com/a/39914235/14251221
+
+      var str = 'sugarfreecat';
+      document.title = '';
+      async function typewriteTitle() {
+        while (true) {
+          document.title = '';
+          for (const char of str) {
+            document.title += char;
+            await sleep(325);
+          }
+
+        }
+      }
+      typewriteTitle();
+    </script>
   </body>
 </html>
