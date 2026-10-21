@@ -1,26 +1,26 @@
 :root {
     --custom-cursor: url('../images/cursor7.webp');
-    --custom-background: url('../images/core/backgrounds/background2.png');
-    --custom-button: url('../images/button2.gif');
-    --custom-border: url('../images/core/borders/2.png');
+    --custom-background: url('../images/core/backgrounds/background3.png');
+    --custom-button: url('../images/button5.png');
+    --custom-border: url('../images/core/borders/6.png');
 
     /* custom settings for buttons */
-    --tab-text-padding-right: 12px;
+    --tab-text-padding-right: 0px;
     --tab-text-padding-top: 0;
     --tab-text-padding-bottom: 0;
     --tab-text-padding-left: 0;
-    --tab-justify-content: flex-end;
+    --tab-justify-content: center;
     --tab-button-width: 90px;
 
     /* custom settings for borders */
     --border-width: 9px;
     --border-style: solid;
     --border-image: url('../images/core/borders/2.png');
-    --border-image-slice: 9 fill;
-    --border-image-width: 1;
-    --border-image-outset: 1;
+    --border-image-slice: 30 fill;
+    --border-image-width: 7;
+    --border-image-outset: 2;
     --border-image-repeat: round;
-    --title-banner-padding-bottom: 20px;
+    --title-banner-padding-bottom: 10px;
 }
 
 body {
