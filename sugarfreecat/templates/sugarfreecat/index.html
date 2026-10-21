@@ -15,7 +15,7 @@
     </div>
     
     {% if posts %}
-        <h3>Recent Posts:</h3>
+        <h3 class="bubble">Recent Posts:</h3>
         <ul class="custom-icon">
             {% for post in posts %}
                 <li><a href="{% url 'post' post.id %}">{{ post.pub_date }} >> {{ post.title }}</a></li>
