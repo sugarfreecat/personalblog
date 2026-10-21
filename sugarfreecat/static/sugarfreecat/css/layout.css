@@ -139,6 +139,7 @@ ul.custom-icon li {
 .link {
     position: relative;
     transition: clip-path 275ms ease;
+    text-decoration: none;
 }
 .link:hover p::before, .link:focus p::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

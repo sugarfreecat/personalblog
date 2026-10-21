@@ -11,8 +11,8 @@
         <ul class="custom-icon link-list">
             {% for link in links %}
                 <li>
-                    <a href="{{ link.link }}" target="_blank" rel="noopener noreferrer">
-                        {{ link.text }}
+                    <a class="link" href="{{ link.link }}" target="_blank" rel="noopener noreferrer">
+                        <p data-content="{{ link.text }}">{{ link.text }}</p>
                     </a>
                 </li>
             {% endfor %}
