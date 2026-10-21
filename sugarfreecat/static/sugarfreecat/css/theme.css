@@ -17,16 +17,15 @@ h3 {
     width: auto;
     align-self: center;
 }
-.background-gallery {
+/* .background-gallery {
     display: grid; 
     grid-template-columns: repeat(5, 1fr); 
     gap: 10px;
     place-items: center;
-}
+} */
 .background-option {
     height: 80px;
     width: auto;
-    align-self: center;
 }
 .button-option {
     height: 30px;

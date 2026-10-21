@@ -1,6 +1,6 @@
 :root {
     --custom-cursor: url('../images/cursor7.webp');
-    --custom-background: url('../images/background.png');
+    --custom-background: url('../images/core/backgrounds/background2.png');
     --custom-button: url('../images/button2.gif');
     --custom-border: url('../images/core/borders/2.png');
 
@@ -18,9 +18,9 @@
     --border-image: url('../images/core/borders/2.png');
     --border-image-slice: 9 fill;
     --border-image-width: 1;
-    --border-image-outset: 0;
+    --border-image-outset: 1;
     --border-image-repeat: round;
-    --title-banner-padding-bottom: 10px;
+    --title-banner-padding-bottom: 20px;
 }
 
 body {
