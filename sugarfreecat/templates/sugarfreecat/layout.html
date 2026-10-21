@@ -21,9 +21,9 @@
       <div class="container">
         <div class="tabs">
             {% for tab in tabs %}
-                <a class="button-link" href="{% url tab.link %}">
+                <a class="button-link link" href="{% url tab.link %}">
                     <div class="button">
-                        <p>{{ tab.text }}</p>
+                        <p data-content="{{ tab.text }}">{{ tab.text }}</p>
                     </div>
                 </a>
             {% endfor %}
