@@ -57,8 +57,9 @@ function bubbagump() {
 
         for (var i = 0; i < text.length; i++) {
             var span = document.createElement("span");
-
-            span.style.textShadow = bubbshd + " 0px 0px 2px";
+            if (element.id === "title-banner") 
+                span.style.textShadow = bubbshd + " 3px 3px 1px";
+            else span.style.textShadow = bubbshd + " 0px 0px 2px";
             span.textContent = text.charAt(i);
 
             element.appendChild(span);

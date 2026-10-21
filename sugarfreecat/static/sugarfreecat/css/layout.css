@@ -48,8 +48,9 @@ body * {
     flex-direction: column;
 }
 #title-banner {
-    display: flex; 
     padding-bottom: var(--title-banner-padding-bottom);
+    font-size: 50px;
+    font-style: italic;
 }
 .container {
     border-width: 9px;
