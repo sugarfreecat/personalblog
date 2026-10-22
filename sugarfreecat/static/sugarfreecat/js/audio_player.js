@@ -47,9 +47,6 @@ function updateSliderVisuals(value) {
 
 // Load track metadata (gets correct total track time)
 audioPlayer.addEventListener("loadedmetadata", () => {
-    console.log("Duration:", audioPlayer.duration);
-    console.log("Seekable ranges:", audioPlayer.seekable.length);
-
     slider.max = Math.floor(audioPlayer.duration);
     durationDisplay.textContent = formatTime(audioPlayer.duration);
 });
@@ -79,22 +76,8 @@ slider.addEventListener("input", () => {
 slider.addEventListener("change", () => {
     const targetTime = Number(slider.value);
 
-    console.log("Target:", targetTime);
-    console.log("Duration:", audioPlayer.duration);
-    console.log("Seekable ranges:", audioPlayer.seekable.length);
-
-    for (let i = 0; i < audioPlayer.seekable.length; i++) {
-        console.log(
-            `Range ${i}:`,
-            audioPlayer.seekable.start(i),
-            "-",
-            audioPlayer.seekable.end(i)
-        );
-    }
-
     try {
         audioPlayer.currentTime = targetTime;
-        console.log("After assignment:", audioPlayer.currentTime);
     } catch (error) {
         console.error("Seek error:", error);
     }

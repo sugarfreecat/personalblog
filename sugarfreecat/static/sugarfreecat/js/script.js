@@ -8,7 +8,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     // RUN YOUR DYNAMIC ELEMENT ALTERATIONS HERE!
     for (const config of configs) {
         const storedValue = localStorage.getItem(config);
-        console.log(config, storedValue);
 
         if (storedValue) {
             document.body.style.setProperty(config, storedValue);
