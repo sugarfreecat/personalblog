@@ -17,6 +17,7 @@ class Post(models.Model):
     _created_at = models.DateTimeField(auto_now_add=True)
     _updated_at = models.DateTimeField(auto_now=True)
     tags = models.CharField(max_length=200, blank=True)
+    song = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.title

@@ -1,10 +1,22 @@
 {% extends "sugarfreecat/layout.html" %}
 {% load static %}
 
+{% block style %}
+    <link rel="stylesheet" href="{% static 'sugarfreecat/css/audio_player.css' %}">
+{% endblock %}
+
 {% block content %}
     <div style="display:flex; justify-content: space-between;">
         <h3 class="bubble">{{ post.title }}</h3>
         <p><em>{{ post.pub_date }}</em></p>
     </div>
     {{ post.text|safe }}
+
+    {% if post.song %}
+        {% include "sugarfreecat/components/audio_player.html" with audio_url=audio_url %}
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'sugarfreecat/js/audio_player.js' %}"></script>
 {% endblock %}

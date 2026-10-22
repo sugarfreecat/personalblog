@@ -43,7 +43,8 @@ def blog(request):
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     tabs = Tab.objects.all().filter(is_active=True)
-    return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post})
+    audio_url = "/static/sugarfreecat/music/" + Post.objects.get(id=post_id).song
+    return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post, "audio_url": audio_url})
 
 def links(request):
     tabs = Tab.objects.all().filter(is_active=True)
@@ -57,3 +58,6 @@ def links(request):
 def theme(request):
     tabs = Tab.objects.all().filter(is_active=True)
     return render(request, "sugarfreecat/theme.html", {"tabs": tabs})
+
+def music_player(request):
+    return render(request, "sugarfreecat/components/audio_player.html")
