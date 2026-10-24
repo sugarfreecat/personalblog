@@ -10,18 +10,18 @@
         <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
             <div>
                 {% if previous_post %}
-                    <a class="link" href="{% url 'post' previous_post.id %}">
-                        <img src="{% static 'sugarfreecat/images/core/arrows/prev3.gif' %}">
-                        <p data-content="prev">prev</p>
+                    <a class="link" href="{% url 'post' previous_post.id %}" style="display: flex; align-items: center;">
+                        <img style="height: 12px; width: auto; margin-right: 8px;" src="{% static 'sugarfreecat/images/core/arrows/prev3.gif' %}">
+                        <p style="margin-bottom: 2px;" data-content="prev">prev</p>
                     </a>
                 {% endif %}
             </div>
 
             <div>
                 {% if next_post %}
-                    <a class="link" href="{% url 'post' next_post.id %}">
-                        <p data-content="next">next</p>
-                        <img src="{% static 'sugarfreecat/images/core/arrows/next3.gif' %}">
+                    <a class="link" href="{% url 'post' next_post.id %}" style="display: flex; align-items: center;">
+                        <p style="margin-bottom: 2px;" data-content="next">next</p>
+                        <img style="height: 12px; width: auto; margin-left: 8px;" src="{% static 'sugarfreecat/images/core/arrows/next3.gif' %}">
                     </a>
                 {% endif %}
             </div>
