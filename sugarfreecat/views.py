@@ -43,7 +43,7 @@ def blog(request):
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     tabs = Tab.objects.all().filter(is_active=True)
-    audio_url = "/static/sugarfreecat/music/" + Post.objects.get(id=post_id).song
+    audio_url = "/static/sugarfreecat/music/" + post.song
     return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post, "audio_url": audio_url})
 
 def links(request):
