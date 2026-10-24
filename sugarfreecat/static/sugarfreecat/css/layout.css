@@ -126,7 +126,7 @@ a {
 ul.custom-icon {
     list-style-type: none; /* 1. Remove the default bullet */
     padding-left: 0;       /* 2. Reset padding if needed */
-  }
+}
 
 ul.custom-icon li {
     background-image: url('../images/deco2.gif'); /* 3. Add your image */
