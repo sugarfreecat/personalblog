@@ -6,9 +6,31 @@
 {% endblock %}
 
 {% block content %}
-    <div style="display:flex; justify-content: space-between;">
-        <h3 class="bubble">{{ post.title }}</h3>
-        <p><em>{{ post.pub_date }}</em></p>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <div>
+                {% if previous_post %}
+                    <a class="link" href="{% url 'post' previous_post.id %}">
+                        <img src="{% static 'sugarfreecat/images/core/arrows/prev3.gif' %}">
+                        <p data-content="prev">prev</p>
+                    </a>
+                {% endif %}
+            </div>
+
+            <div>
+                {% if next_post %}
+                    <a class="link" href="{% url 'post' next_post.id %}">
+                        <p data-content="next">next</p>
+                        <img src="{% static 'sugarfreecat/images/core/arrows/next3.gif' %}">
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <h3 class="bubble">{{ post.title }}</h3>
+            <p><em>{{ post.pub_date }}</em></p>
+        </div>
     </div>
     {{ post.text|safe }}
 

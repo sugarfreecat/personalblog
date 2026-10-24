@@ -43,8 +43,18 @@ def blog(request):
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     tabs = Tab.objects.all().filter(is_active=True)
+
+    previous_post = Post.objects.filter(id__lt=post.id).order_by('-id').first()
+    next_post = Post.objects.filter(id__gt=post.id).order_by('id').first()
+
     audio_url = "/static/sugarfreecat/music/" + post.song
-    return render(request, "sugarfreecat/post_detail.html", {"tabs": tabs, "post": post, "audio_url": audio_url})
+    return render(request, "sugarfreecat/post_detail.html", {
+        "tabs": tabs, 
+        "post": post, 
+        "previous_post": previous_post,
+        "next_post": next_post,
+        "audio_url": audio_url
+    })
 
 def links(request):
     tabs = Tab.objects.all().filter(is_active=True)
