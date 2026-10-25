@@ -4,23 +4,25 @@
     <link rel="stylesheet" href="{% static 'sugarfreecat/css/theme.css' %}">
 {% endblock %}
 {% block content %}
-    <h3 class="bubble">Pick your cursor!</h3>
-    <div id="cursor-gallery" class="cursor-gallery">
-    </div>
+    <div class="theme-container">
+        <div>
+            <h3 class="bubble">Pick your theme!</h3>
+            <ul class="custom-icon theme-list">
+                <li>
+                    <p class="theme-option" data-theme-content="strawberry-explosion" data-content="strawberry-explosion">strawberry explosion</p>
+                </li>
+                <li>
+                    <p class="theme-option" data-theme-content="ghost-town" data-content="ghost-town">ghost town</p>
+                </li>
+                <li>
+                    <p class="theme-option" data-theme-content="cherry-blossom" data-content="cherry blossom">cherry blossom</p>
+                </li>
+            </ul>
+        </div>
 
-    <h3 class="bubble">Pick your background!</h3>
-    <div id="background-gallery" class="background-gallery">
-    </div>
-
-    <h3 class="bubble">Pick your button!</h3>
-    <div id="button-gallery" class="button-gallery">
-    </div>
-
-    <h3 class="bubble">Pick your border!</h3>
-    <div id="border-gallery" class="border-gallery">
-    </div>
-    <div id="reset-btn" class="reset-btn">
-        Reset to Default!
+        <div id="reset-btn" class="reset-btn">
+            Reset to Default!
+        </div>
     </div>
 {% endblock %}
 

@@ -79,8 +79,22 @@ function applyPropertyStyle(property, configs) {
 
 document.getElementById('reset-btn').addEventListener('click', resetTheme);
 function resetTheme() {
-    configs.forEach(property => {
-        document.body.style.removeProperty(property);
-        localStorage.removeItem(property);
-    });
+    // configs.forEach(property => {
+    //     document.body.style.removeProperty(property);
+    //     localStorage.removeItem(property);
+    // });
+    localStorage.removeItem("theme");
+    document.documentElement.removeAttribute('data-theme');
+
 }
+
+// NEW THEME ADDITION
+
+const themeOptions = [...document.getElementsByClassName("theme-option")];
+
+themeOptions.forEach(themeOption => {
+    themeOption.addEventListener('click', () => {
+        document.documentElement.dataset.theme = themeOption.dataset.themeContent;
+        localStorage.setItem("theme", themeOption.dataset.themeContent);
+    })
+})

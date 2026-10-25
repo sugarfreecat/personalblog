@@ -1,18 +1,7 @@
-import configs from '/static/sugarfreecat/config/theme/configList.json' with { type: 'json' };
-
 window.addEventListener('DOMContentLoaded', async () => {
     const animationPromise = playFullScreenAnimation('entering', 800);
     
     document.body.classList.remove('is-loading');
-
-    // RUN YOUR DYNAMIC ELEMENT ALTERATIONS HERE!
-    for (const config of configs) {
-        const storedValue = localStorage.getItem(config);
-
-        if (storedValue) {
-            document.body.style.setProperty(config, storedValue);
-        }
-    }
 
     // Wait for the animation fade-out to finish smoothly
     await animationPromise;

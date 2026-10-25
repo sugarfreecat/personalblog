@@ -2,7 +2,7 @@
     {
         "src": "core/borders/1.webp",
         "attributes": {
-            "--border-image-width": "6",
+            "--border-image-width": "8",
             "--border-image-outset": "2",
             "--border-image-slice": "30 fill",
             "--title-banner-padding-bottom": "20px"
@@ -80,6 +80,27 @@
             "--border-image-width": "3",
             "--border-image-outset": "1.5",
             "--border-image-slice": "40 fill",
+            "--title-banner-padding-bottom": "20px"
+        }
+    },
+    {
+        "src": "core/borders/11.png"
+    },
+    {
+        "src": "core/borders/12.gif",
+        "attributes": {
+            "--border-image-width": "5",
+            "--border-image-outset": "1.5",
+            "--border-image-slice": "53 fill",
+            "--title-banner-padding-bottom": "20px"
+        }
+    },
+    {
+        "src": "core/borders/13.gif",
+        "attributes": {
+            "--border-image-width": "5",
+            "--border-image-outset": "1.5",
+            "--border-image-slice": "53 fill",
             "--title-banner-padding-bottom": "20px"
         }
     }

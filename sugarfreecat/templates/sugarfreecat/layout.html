@@ -11,6 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+          document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
     {% block style %}
     {% endblock %}
   </head>
