@@ -2,32 +2,33 @@
 {% load static %}
 
 {% block style %}
+    <link rel="stylesheet" href="{% static 'sugarfreecat/css/post_detail.css' %}">
     <link rel="stylesheet" href="{% static 'sugarfreecat/css/audio_player.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div style="display: flex; flex-direction: column;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+    <div id="header">
+        <div id="post-nav">
             <div>
                 {% if previous_post %}
-                    <a class="link" href="{% url 'post' previous_post.id %}" style="display: flex; align-items: center;">
-                        <img style="height: 12px; width: auto; margin-right: 8px;" src="{% static 'sugarfreecat/images/core/arrows/prev3.gif' %}">
-                        <p style="margin-bottom: 2px;" data-content="prev">prev</p>
+                    <a class="link nav prev" href="{% url 'post' previous_post.id %}">
+                        <img src="{% static 'sugarfreecat/images/core/arrows/prev3.gif' %}">
+                        <p data-content="prev">prev</p>
                     </a>
                 {% endif %}
             </div>
 
             <div>
                 {% if next_post %}
-                    <a class="link" href="{% url 'post' next_post.id %}" style="display: flex; align-items: center;">
-                        <p style="margin-bottom: 2px;" data-content="next">next</p>
-                        <img style="height: 12px; width: auto; margin-left: 8px;" src="{% static 'sugarfreecat/images/core/arrows/next3.gif' %}">
+                    <a class="link nav next" href="{% url 'post' next_post.id %}">
+                        <p data-content="next">next</p>
+                        <img src="{% static 'sugarfreecat/images/core/arrows/next3.gif' %}">
                     </a>
                 {% endif %}
             </div>
         </div>
 
-        <div style="display: flex; justify-content: space-between;">
+        <div id="post-title">
             <h3 class="bubble">{{ post.title }}</h3>
             <p><em>{{ post.pub_date }}</em></p>
         </div>
