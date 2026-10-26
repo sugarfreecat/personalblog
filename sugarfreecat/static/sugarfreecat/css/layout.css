@@ -81,6 +81,26 @@
     --title-banner-padding-bottom: 20px;
 }
 
+[data-theme="snowflakes"] {
+    --custom-cursor: url('../images/cursor32.png');
+    --custom-background: url('../images/core/backgrounds/twinkle01.png');
+    --custom-button: url('../images/button5.png');
+    --custom-border: url('../images/core/borders/13.gif');
+
+    /* custom settings for borders */
+    --border-image-width: 5;
+    --border-image-outset: 1.5;
+    --border-image-slice: 53 fill;
+    --title-banner-padding-bottom: 20px;
+
+    /* bubble foreground color and background color */
+    --bubble-fg-color: #02127b;
+    --bubble-bg-color: #a099ff;
+
+    --link-color: #0018b3;
+    color: #02127b;
+}
+
 body {
     font-family: 'Pixelify Sans', sans-serif;
     background-image: var(--custom-background);
