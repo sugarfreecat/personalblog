@@ -1,7 +1,7 @@
 :root {
-    --custom-cursor: url('../images/cursor7.webp');
+    --custom-cursor: url('../images/core/cursors/cursor7.webp');
     --custom-background: url('../images/core/backgrounds/background3.png');
-    --custom-button: url('../images/button5.png');
+    --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/6.png');
 
     /* custom settings for buttons */
@@ -30,9 +30,9 @@
 }
 
 [data-theme="ghost-town"] {
-    --custom-cursor: url('../images/cursor3.webp');
+    --custom-cursor: url('../images/core/cursors/cursor3.webp');
     --custom-background: url('../images/core/backgrounds/background19.png');
-    --custom-button: url('../images/button4.gif');
+    --custom-button: url('../images/core/buttons/button4.gif');
     --custom-border: url('../images/core/borders/8.png');
 
     /* custom settings for buttons */
@@ -53,9 +53,9 @@
 }
 
 [data-theme="strawberry-explosion"] {
-    --custom-cursor: url('../images/cursor31.png');
+    --custom-cursor: url('../images/core/cursors/cursor31.png');
     --custom-background: url('../images/core/backgrounds/background3.png');
-    --custom-button: url('../images/button11.png');
+    --custom-button: url('../images/core/buttons/button11.png');
     --custom-border: url('../images/core/borders/1.webp');
 
     /* custom settings for buttons */
@@ -69,9 +69,9 @@
 }
 
 [data-theme="cherry-blossom"] {
-    --custom-cursor: url('../images/cursor9.webp');
+    --custom-cursor: url('../images/core/cursors/cursor9.webp');
     --custom-background: url('../images/core/backgrounds/background22.png');
-    --custom-button: url('../images/button5.png');
+    --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/12.gif');
 
     /* custom settings for borders */
@@ -82,9 +82,9 @@
 }
 
 [data-theme="snowflakes"] {
-    --custom-cursor: url('../images/cursor32.png');
+    --custom-cursor: url('../images/core/cursors/cursor32.png');
     --custom-background: url('../images/core/backgrounds/twinkle01.png');
-    --custom-button: url('../images/button5.png');
+    --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/13.gif');
 
     /* custom settings for borders */
