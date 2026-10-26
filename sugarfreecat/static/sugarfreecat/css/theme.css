@@ -14,6 +14,12 @@ h3 {
     list-style: none;
     padding: 0;
 }
+.theme-option {
+    transition: filter 0.3s ease-in-out;
+}
+.theme-option:hover {
+    filter: blur(1px)
+}
 .reset-btn {
     text-decoration: overline;
     width: 100%;
