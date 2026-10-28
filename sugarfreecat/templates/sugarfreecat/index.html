@@ -2,24 +2,33 @@
 {% load static %}
 
 {% block content %}
-    <div style="padding-bottom: 10px;">
-        <img src="{% static 'sugarfreecat/images/banner.gif' %}" alt="welcome to my homepage" style="height: 150px; width: auto; align-self: center;">
+    <div style="padding-bottom: 10px; display: flex; justify-content: space-between;">
+        <div style="width: 80%;">
+            <h3 style="margin-bottom: 5px;" class="bubble">Welcome to my homepage!</h3>
+            <p>Hi there! Welcome to this little corner of the internet. I like to post about all sorts of things, but mostly you'll find politics, sewing projects, and tidbits about my life.</p>
+            <p>You'll also find that I'm constantly adding new fun things to this site, so be sure to check back often! This place has become a major creative space for me, so I hope you enjoy it!</p>
+        </div>
+        <img src="{% static 'sugarfreecat/images/cookiehouse-lamp.gif' %}" alt="cookiehouse lamp" style="height: 60px; width: auto; align-self: end; margin-bottom: 10px;">
+        <img src="{% static 'sugarfreecat/images/cookiehouse-welcome.gif' %}" alt="cookiehouse welcome" style="height: 150px; width: auto; align-self: center;">
     </div>
 
-    <p>Hello! This website is still a work in progress, but I hope to be able to use it as a writing space to talk about anything I feel like! That would probably include movies and series I've watched recently, games I've played, sewing projects I'm working on, basically anything that piques my interest!</p>
-    <p>Speaking of films, I'm pretty active on Letterboxd, so you can find me <a href="https://boxd.it/32qMx" target="_blank">here</a>!</p>
+    <p>Thank you for stopping by!</p>
     
-    <div style="display: flex; padding-top: 20px; padding-bottom: 20px;">
-        <img src="{% static 'sugarfreecat/images/separator2.gif' %}" alt="roses in a row" style="height: 35px; width: auto; align-self: center;">
-        <img src="{% static 'sugarfreecat/images/separator2.gif' %}" alt="roses in a row" style="height: 35px; width: auto; align-self: center;">
+    <div style="display: flex; padding-top: 20px; padding-bottom: 20px; justify-content: center;">
+        <img src="{% static 'sugarfreecat/images/core/dividers/6.gif' %}" alt="roses divider" style="height: 35px; width: auto; align-self: center;">
     </div>
     
     {% if posts %}
-        <h3 class="bubble">Recent Posts:</h3>
-        <ul class="custom-icon">
-            {% for post in posts %}
-                <li><a href="{% url 'post' post.id %}">{{ post.pub_date }} >> {{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <h3 class="bubble">Recent Posts:</h3>
+                <ul class="custom-icon">
+                    {% for post in posts %}
+                        <li><a href="{% url 'post' post.id %}">{{ post.pub_date }} >> {{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <img src="{% static 'sugarfreecat/images/cat.gif' %}" alt="sleeping cat" style="height: 100px; width: auto; align-self: center;">
+        </div>
     {% endif %}
 {% endblock %}
