@@ -27,6 +27,8 @@
 
     --link-color: #eb34a1;
     color: #a90060;
+
+    --scrollbar-color: #ffcbe4 #ffa0d700;
 }
 
 [data-theme="ghost-town"] {
@@ -99,8 +101,14 @@
 
     --link-color: #0018b3;
     color: #02127b;
+
+    --scrollbar-color: #cccbff #ffa0d700;
 }
 
+html {
+    scrollbar-color: var(--scrollbar-color); 
+    scrollbar-width: thin; 
+}
 body {
     font-family: 'Pixelify Sans', sans-serif;
     background-image: var(--custom-background);
@@ -128,6 +136,7 @@ body * {
     padding-bottom: var(--title-banner-padding-bottom);
     font-size: 50px;
     font-style: italic;
+    user-select: none;
 }
 .container {
     border-width: 9px;
@@ -143,23 +152,13 @@ body * {
     background-color: #ffeded;
     padding: 30px;
 }
-.no-scrollbar {
-    /* For Firefox */
-    scrollbar-width: none;
-    
-    /* For Internet Explorer and Legacy Edge */
-    -ms-overflow-style: none;
-}
 
-/* For Chrome, Safari, and Opera */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
 .column {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-    padding: 0 0 0 40px;
+    overflow: auto;
+    margin: 0 0 0 40px;
+    padding-right: 40px;
     width: 100%;
 }
 .tabs {
@@ -171,7 +170,7 @@ body * {
 }
 .button-link {
     text-decoration: none;
-    /* color: black; */
+    user-select: none;
 }
 .button {
     border-width: 9px;
