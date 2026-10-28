@@ -107,7 +107,8 @@
 
 html {
     scrollbar-color: var(--scrollbar-color); 
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
+    overflow-x: hidden;
 }
 body {
     font-family: 'Pixelify Sans', sans-serif;
