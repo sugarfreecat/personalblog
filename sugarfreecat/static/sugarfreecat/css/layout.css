@@ -51,15 +51,14 @@ body * {
     display: flex;
     flex-direction: column;
     overflow: auto;
-    margin: 0 0 0 40px;
-    padding-right: 40px;
-    width: 100%;
+    margin: 0 0 0 20px;
+    width: 85%;
 }
 .tabs {
     display: flex;
     flex-direction: column;
-    width: 150px;
-    align-items: center;
+    width: 15%;
+    align-items: start;
     gap: 10px;
 }
 .button-link {
