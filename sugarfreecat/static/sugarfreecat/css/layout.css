@@ -30,7 +30,9 @@
 
     --scrollbar-color: #ffcbe4 #ffa0d700;
 
-    --list-icon-img: url('../images/deco2.gif')
+    --list-icon-img: url('../images/deco2.gif');
+
+    --blog-color: rgba(255, 0, 174, 0.103);
 }
 
 [data-theme="ghost-town"] {
@@ -55,7 +57,9 @@
     --link-color: #c294b0;
     color: #626262;
 
-    --list-icon-img: url('../images/wing.gif')
+    --list-icon-img: url('../images/wing.gif');
+
+    --blog-color: rgba(255, 0, 208, 0.086);
 }
 
 [data-theme="strawberry-explosion"] {
@@ -108,7 +112,9 @@
 
     --scrollbar-color: #cccbff #ffa0d700;
 
-    --list-icon-img: url('../images/spiral.gif')
+    --list-icon-img: url('../images/spiral.gif');
+
+    --blog-color: rgba(0, 162, 255, 0.103);
 }
 
 html {
