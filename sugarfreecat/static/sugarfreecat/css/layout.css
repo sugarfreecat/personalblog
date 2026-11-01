@@ -44,7 +44,7 @@ body * {
     max-height: 500px;
     width: 900px;
     background-color: #ffeded;
-    padding: 30px;
+    padding: var(--container-padding);
 }
 
 .column {

@@ -4,6 +4,8 @@
     --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/6.png');
 
+    --container-padding: 30px;
+
     /* custom settings for buttons */
     --tab-text-padding-right: 0px;
     --tab-text-padding-top: 0;
@@ -84,9 +86,11 @@
     --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/12.gif');
 
+    --container-padding: 40px;
+
     /* custom settings for borders */
     --border-image-width: 5;
-    --border-image-outset: 1.5;
+    --border-image-outset: 2.5;
     --border-image-slice: 53 fill;
     --title-banner-padding-bottom: 20px;
 }
@@ -97,9 +101,11 @@
     --custom-button: url('../images/core/buttons/button5.png');
     --custom-border: url('../images/core/borders/13.gif');
 
+    --container-padding: 40px;
+
     /* custom settings for borders */
     --border-image-width: 5;
-    --border-image-outset: 1.5;
+    --border-image-outset: 2.5;
     --border-image-slice: 53 fill;
     --title-banner-padding-bottom: 20px;
 
