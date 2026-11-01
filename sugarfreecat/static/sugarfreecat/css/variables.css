@@ -70,6 +70,8 @@
     --custom-button: url('../images/core/buttons/button11.png');
     --custom-border: url('../images/core/borders/1.webp');
 
+    --container-padding: 40px;
+
     /* custom settings for buttons */
     --tab-button-width: 110px;
 
