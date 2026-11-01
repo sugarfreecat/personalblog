@@ -29,6 +29,8 @@
     color: #a90060;
 
     --scrollbar-color: #ffcbe4 #ffa0d700;
+
+    --list-icon-img: url('../images/deco2.gif')
 }
 
 [data-theme="ghost-town"] {
@@ -52,6 +54,8 @@
 
     --link-color: #c294b0;
     color: #626262;
+
+    --list-icon-img: url('../images/wing.gif')
 }
 
 [data-theme="strawberry-explosion"] {
@@ -103,6 +107,8 @@
     color: #02127b;
 
     --scrollbar-color: #cccbff #ffa0d700;
+
+    --list-icon-img: url('../images/spiral.gif')
 }
 
 html {
@@ -206,7 +212,7 @@ ul.custom-icon {
 }
 
 ul.custom-icon li {
-    background-image: url('../images/deco2.gif'); /* 3. Add your image */
+    background-image: var(--list-icon-img); /* 3. Add your image */
     background-repeat: no-repeat;           /* 4. Don't let it tile */
     background-size: 16px 16px;             /* 5. Force the exact image size */
     background-position: left center;       /* 6. Align it horizontally and vertically */
