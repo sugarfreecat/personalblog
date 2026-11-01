@@ -2,15 +2,36 @@
 {% load static %}
 
 {% block content %}
-    {% for group in posts_by_month %}
-        <h3 class="bubble">{{ group.month|date:"F, Y" }}</h3>
+    <div style="display: flex; width: 100%;">
+        <div style="width: 75%; padding: 0 10px;">
+            {% for post in posts %}
+                <a href="{% url 'post' post.id %}" style="text-decoration: none; color: inherit;">
+                    <div style="margin-bottom: 20px; background-color:rgba(0, 162, 255, 0.103); border-radius: 10px; padding: 10px;">
+                        <p style="margin-bottom: 0; font-style: italic;">{{ post.pub_date|date:"d F, Y" }}</p>
+                        <h3 class="bubble">{{ post.title }}</h3>
 
-        <ul class="custom-icon">
-            {% for post in group.posts %}
-                <li>
-                    <a href="{% url 'post' post.id %}">{{ post.pub_date|date:"M d, Y" }} >> {{ post.title }}</a>
-                </li>
+                        <div>{{ post.text|safe|truncatewords:75 }}</div>
+                        {% if post.tag_list %}
+                            <p><b>Tagged as</b>: 
+                                {% for tag in post.tag_list %}
+                                    <a href="{% url 'blog' %}?tag={{ tag }}">{{ tag }}</a>
+                                    {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    </div>
+                </a>
             {% endfor %}
-        </ul>
-    {% endfor %}
+        </div>
+        <div style="width: 25%;">
+            <h3 class="bubble">Archives</h3>
+            <ul class="custom-icon">
+                {% for date in post_dates %}
+                    <li>
+                        <a href="{% url 'archive' year=date|date:'Y' month=date|date:'m' %}">{{ date|date:"F, Y" }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

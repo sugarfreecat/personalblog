@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from itertools import groupby
+from datetime import date
 
 from .models import Tab, Post, Link
 
@@ -23,22 +24,21 @@ def about(request):
 
 def blog(request):
     tabs = Tab.objects.all().filter(is_active=True)
-    months = (
-        Post.objects
-        .dates('pub_date', 'month', order='DESC')
-    )
+    post_dates = (Post.objects.dates('pub_date', 'month', order='DESC'))
+    posts = Post.objects.all().order_by('-pub_date')
 
-    posts_by_month = [
-        {
-            'month': month,
-            'posts': Post.objects.filter(
-                pub_date__year=month.year,
-                pub_date__month=month.month
-            ).order_by('-pub_date')
-        }
-        for month in months
-    ]
-    return render(request, "sugarfreecat/blog.html", {"tabs": tabs, "posts_by_month": posts_by_month})
+    tag = request.GET.get('tag')
+    if tag:
+        posts = posts.filter(tags__icontains=tag)
+
+    return render(request, "sugarfreecat/blog.html", {"tabs": tabs, "posts": posts, "post_dates": post_dates})
+
+def archive(request, year, month):
+    tabs = Tab.objects.all().filter(is_active=True)
+    posts = Post.objects.filter(pub_date__year=year, pub_date__month=month).order_by('-pub_date')
+
+    archive_date = date(int(year), int(month), 1)
+    return render(request, "sugarfreecat/archive.html", {"tabs": tabs, "posts": posts, "archive_date": archive_date})
 
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)

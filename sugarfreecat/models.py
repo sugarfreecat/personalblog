@@ -22,6 +22,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def tag_list(self):
+        return [tag.strip() for tag in self.tags.split(',') if tag.strip()]
+
 class Link(models.Model):
     text = models.CharField(max_length=50)
     link = models.CharField(max_length=200)
