@@ -92,7 +92,7 @@
 
     /* custom settings for borders */
     --border-image-width: 5;
-    --border-image-outset: 2.5;
+    --border-image-outset: 1.5;
     --border-image-slice: 53 fill;
     --title-banner-padding-bottom: 20px;
 }
@@ -107,7 +107,7 @@
 
     /* custom settings for borders */
     --border-image-width: 5;
-    --border-image-outset: 2.5;
+    --border-image-outset: 1.5;
     --border-image-slice: 53 fill;
     --title-banner-padding-bottom: 20px;
 
