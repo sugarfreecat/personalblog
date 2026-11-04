@@ -32,3 +32,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.quote {
+    font-style: italic;
+    margin: 15px;
+    margin-bottom: 20px;
+}
